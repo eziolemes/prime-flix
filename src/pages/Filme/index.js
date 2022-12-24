@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import './filme-info.css';
 import api from '../../services/api';
+import env from 'react-dotenv';
 
 function Filme() {
   const { id } = useParams();
@@ -14,7 +15,7 @@ function Filme() {
     async function loadFilme() {
       await api.get(`/movie/${id}`, {
         params: {
-          api_key: "5bc3301c5424e2acbece33016143080b",
+          api_key: env.API_KEY,
           language: "pt-BR",
         }
       })

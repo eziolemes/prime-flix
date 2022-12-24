@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import api from '../../services/api';
 import { Link } from 'react-router-dom';
 import './home.css';
+import env from 'react-dotenv';
 
 
 function Home() {
@@ -13,7 +14,7 @@ function Home() {
     async function loadFilmes() {
       const response = await api.get("movie/now_playing", {
         params: {
-          api_key: "5bc3301c5424e2acbece33016143080b",
+          api_key: env.API_KEY,
           language: "pt-BR",
           page: 1,
         }
