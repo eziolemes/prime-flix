@@ -14,7 +14,7 @@ function Favoritos(){
 
   function excluirFilme(id) {
     let filtroFilmes = filmes.filter((item) => {
-      return (item.id != id);
+      return (item.id !== id);
     })
 
     setFilmes(filtroFilmes);
